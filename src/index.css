@@ -1,0 +1,53 @@
+/* Dark "space" theme globals */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg-900: #071026; /* deep navy */
+  --bg-800: #0b1324;
+  --bg-700: #0f2033;
+  --panel: rgba(255,255,255,0.03);
+  --muted: #9fb4c8;
+  --star: #e6f7ff;
+  --primary-1: #00e6ff; /* bright cyan */
+  --primary-2: #007bff; /* electric blue */
+  --accent: #00ff9c; /* neon green accent */
+  --glass-blur: 8px;
+  --accent-glow: 0 14px 50px rgba(0,230,255,0.07);
+  color-scheme: dark;
+  color: var(--star);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+html{scroll-behavior:smooth;height:100%;}
+
+body{
+  min-height:100%;
+  background: linear-gradient(180deg, var(--bg-900) 0%, var(--bg-800) 60%, var(--bg-700) 100%);
+  color:var(--star);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* subtle tech grid overlay */
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), repeating-linear-gradient(90deg, rgba(0,0,0,0) 0 19px, rgba(255,255,255,0.012) 20px), repeating-linear-gradient(0deg, rgba(0,0,0,0) 0 19px, rgba(255,255,255,0.01) 20px);
+  background-size:100% 100%, 20px 20px, 20px 20px;
+  opacity:0.08;
+}
+
+button{font-family:inherit}
+
+a{color:inherit;text-decoration:none}
+
+/* ensure main content appears above overlay */
+#root, .header, .hero, .about, .projects, .footer{position:relative;z-index:1}
+
+
